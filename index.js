@@ -20,10 +20,10 @@ var _async2 = _interopRequireDefault(_async);
 
 /**
  * Finds holes in sequential series fetched by `listNumsF` between `minNumF`
- * and `maxNumF`.
+ * and `maxNumF`, which are all async.
  *
- * Note: Performs chunking of listNumsF of `chunking` so as not to overload
- * DB / memory.
+ * Note: Performs chunking of listNumsF of `chunking` amount so as not to
+ * overload DB / memory.
  */
 
 function findMissingIds(chunking, minNumF, maxNumF, listNumsF, next) {
