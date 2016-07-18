@@ -56,7 +56,8 @@ function findMissingIds(chunking, minNumF, maxNumF, listNumsF, next) {
         if (err) {
             return next(err);
         }
-        _async2['default'].series(getChunksFuncs(min, max), function (err2, result) {
+        _async2['default'].parallelLimit(getChunksFuncs(min, max), 10, function (err2, result) {
+            console.log("R: ", result);
             if (err2) {
                 return next(err2);
             }
